@@ -7,17 +7,16 @@ let sentence = ["The","walrus","danced","through","the","trees","in","the","ligh
     and output the words to the browser console.
 */
 
-function addExcitement (theWordArray) {
+function addExcitement (theWordArray, delimiter, numberOfDelimiters) {
 
     // Each time the for loop executes, you're going to add one more word to this string
     let buildMeUp = ""
-    
+    let delimiters = delimiter.repeat(numberOfDelimiters)
     for (let i = 0; i < theWordArray.length; i++) {
-        if (i % 3 === 0) {
-            buildMeUp += `${theWordArray[i]} ` 
-            theWordArray[i + 2] += "!"     
+        if ((i+1) % 3 === 0) {
+            buildMeUp += `${theWordArray[i]}${delimiters} `    
         } else {
-        buildMeUp += `${theWordArray[i]} ` 
+            buildMeUp += `${theWordArray[i]} ` 
         }
         console.log(buildMeUp)
     }
